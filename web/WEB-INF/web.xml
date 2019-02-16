@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    <context-param>
+        <param-name>email</param-name>
+        <param-value>admin@email.com</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>phone</param-name>
+        <param-value>085-487-1896</param-value>
+    </context-param>
+    
+    <!--CheckTime-->
+    <servlet>
+        <servlet-name>CheckTime</servlet-name>
+        <servlet-class>com.praka.a4.CheckTime</servlet-class>
+        <init-param>
+            <param-name>openTime</param-name>
+            <param-value>9:00:00</param-value>
+        </init-param>
+        <init-param>
+            <param-name>closeTime</param-name>
+            <param-value>17:00:00</param-value>
+        </init-param>
+        <init-param>
+            <param-name>Date</param-name>
+            <param-value>MON,TUE,WED,THU,FRI</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckTime</servlet-name>
+        <url-pattern>/CheckTime</url-pattern>
+    </servlet-mapping>
+    
+</web-app>
