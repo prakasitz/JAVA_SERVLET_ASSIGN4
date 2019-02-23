@@ -43,7 +43,7 @@ public class CheckTime extends HttpServlet {
         closeCalendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(closeTime[0]));
         closeCalendar.set(Calendar.MINUTE, Integer.parseInt(closeTime[1]));
         closeCalendar.set(Calendar.SECOND, Integer.parseInt(closeTime[2]));
-        
+
         Calendar now = Calendar.getInstance();
         String[] dateNow = now.getTime().toString().split(" "); // Sat Feb 16 19:34:27 ICT 2019 ใช้แค่ วันอย่างเดียว dateNow[0]
         boolean checkDate = false;
@@ -62,7 +62,6 @@ public class CheckTime extends HttpServlet {
             out.println("<head>"); 
             out.println("</head>");
             out.println("<body>");
-            
             if (now.after(openCalendar) && now.before(closeCalendar) && checkDate){
                 out.println("<form action='./LoginServlet' method='POST'>");
                 out.println("username: <input type='text' name='username'><br/>")   ;
